@@ -4717,3 +4717,41 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 32ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 7079)
 
 
+Started GET "/" for ::1 at 2023-06-13 13:57:12 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/kevin/.rvm/gems/ruby-3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/kevin/.rvm/gems/ruby-3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.5ms | Allocations: 727)
+Completed 200 OK in 13ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 7094)
+
+
+Started GET "/books" for ::1 at 2023-06-13 13:57:19 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+Started GET "/books" for ::1 at 2023-06-13 13:58:16 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 109)
+  Rendered layout layouts/application.html.erb (Duration: 133.4ms | Allocations: 35554)
+Completed 200 OK in 137ms (Views: 136.1ms | Allocations: 36667)
+
+
+Started GET "/" for ::1 at 2023-06-13 13:58:20 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2422)
+Completed 200 OK in 9ms (Views: 8.3ms | Allocations: 2735)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20230613060305)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "genre" varchar, "publish_date" date, "cover_image" varchar, "isbn_number" varchar, "brief_description" text, "detailed_description" text, "rating" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230613060305"]]
+  [1m[36mTRANSACTION (25.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
