@@ -1,0 +1,20 @@
+<h1><%= @books.title %></h1>
+
+<p><%= @books.id %></p>
+<p><%= @books.brief_description %></p>
+<p><%= @books.author %></p>
+<p><%= @books.genre %></p>
+<p><%= @books.publish_date %></p>
+<p><%= @books.cover_image %></p>
+<p><%= @books.isbn_number %></p>
+<p><%= @books.detailed_description %></p>
+<p><%= @books.rating %></p>
+
+
+<ul>
+  <li><%= link_to "Edit", edit_book_path(@books) %></li>
+  <li><%= link_to "Destroy", book_path(@books), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
