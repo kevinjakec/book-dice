@@ -6438,3 +6438,54 @@ Processing by BooksController#show as HTML
 Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 7036)
 
 
+Started GET "/" for ::1 at 2023-06-14 13:58:54 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:4
+  Rendered books/index.html.erb within layouts/application (Duration: 23.5ms | Allocations: 20225)
+  Rendered layout layouts/application.html.erb (Duration: 88.6ms | Allocations: 54910)
+Completed 200 OK in 138ms (Views: 94.5ms | ActiveRecord: 0.8ms | Allocations: 64229)
+
+
+Started GET "/books/1" for ::1 at 2023-06-14 13:58:57 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 26)
+  Rendered reviews/_form.html.erb (Duration: 21.9ms | Allocations: 18280)
+  Rendered books/show.html.erb within layouts/application (Duration: 47.0ms | Allocations: 26709)
+  Rendered layout layouts/application.html.erb (Duration: 49.5ms | Allocations: 28901)
+Completed 200 OK in 73ms (Views: 49.4ms | ActiveRecord: 0.9ms | Allocations: 31678)
+
+
+Started GET "/" for ::1 at 2023-06-14 14:50:37 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:4
+  Rendered books/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 20225)
+  Rendered layout layouts/application.html.erb (Duration: 109.5ms | Allocations: 55222)
+Completed 200 OK in 131ms (Views: 112.2ms | ActiveRecord: 0.7ms | Allocations: 64541)
+
+
+Started GET "/" for ::1 at 2023-06-14 14:51:27 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:4
+  Rendered books/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 919)
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 3632)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.5ms | Allocations: 4728)
+
+
