@@ -5605,3 +5605,836 @@ Processing by BooksController#show as HTML
 Completed 200 OK in 30ms (Views: 20.4ms | ActiveRecord: 0.9ms | Allocations: 20777)
 
 
+Started GET "/" for ::1 at 2023-06-14 07:38:56 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:4
+  Rendered books/index.html.erb within layouts/application (Duration: 26.5ms | Allocations: 20609)
+  Rendered layout layouts/application.html.erb (Duration: 124.7ms | Allocations: 55487)
+Completed 200 OK in 155ms (Views: 130.4ms | ActiveRecord: 1.4ms | Allocations: 62778)
+
+
+Started GET "/books/1" for ::1 at 2023-06-14 07:38:59 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 504)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2902)
+Completed 200 OK in 13ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 5681)
+
+
+Started GET "/books/1/edit" for ::1 at 2023-06-14 07:39:01 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (18.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 16.9ms | Allocations: 5272)
+  Rendered books/edit.html.erb within layouts/application (Duration: 18.9ms | Allocations: 5525)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 7717)
+Completed 200 OK in 46ms (Views: 25.1ms | ActiveRecord: 18.6ms | Allocations: 8547)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 07:39:07 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2513)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 3282)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReviews (20230613234055)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "reviewer_id" integer NOT NULL, "body" text, "book_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_007031d9cb"
+FOREIGN KEY ("reviewer_id")
+  REFERENCES "reviewers" ("id")
+, CONSTRAINT "fk_rails_924a0b30ca"
+FOREIGN KEY ("book_id")
+  REFERENCES "books" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_reviewer_id" ON "reviews" ("reviewer_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_book_id" ON "reviews" ("book_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230613234055"]]
+  [1m[36mTRANSACTION (22.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books/1" for ::1 at 2023-06-14 07:51:44 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2654)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2726)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms | Allocations: 10098)
+
+
+  
+ActionView::Template::Error (undefined method `reviews' for nil:NilClass):
+    20: </ul>
+    21: 
+    22: <h2>Add a review:</h2>
+    23: <%= form_with model: [ @book, @booke.reviews.build ] do |form| %>
+    24:     <%= form.label :body %><br>
+    25:     <%= form.text_area :body %>
+    26:   </p>
+  
+app/views/books/show.html.erb:23
+Started GET "/books/1" for ::1 at 2023-06-14 07:51:57 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 44.7ms | Allocations: 27739)
+  Rendered layout layouts/application.html.erb (Duration: 62.2ms | Allocations: 41571)
+Completed 200 OK in 66ms (Views: 63.6ms | ActiveRecord: 0.5ms | Allocations: 43088)
+
+
+Started GET "/books/1" for ::1 at 2023-06-14 08:01:13 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 4359)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4431)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.6ms | Allocations: 11228)
+
+
+  
+ActionView::Template::Error (undefined method `comments' for #<Book id: 1, title: "Grit", author: "Angela Duckworth", genre: "Business &  Economics", publish_date: "2016-05-03", cover_image: "https://m.media-amazon.com/images/P/1501111108.01....", isbn_number: "9781501111129, 1501111124", brief_description: "In this instant New York Times bestseller, Angela ...", detailed_description: "In this instant New York Times bestseller, Angela ...", rating: 4.5, created_at: "2023-06-13 06:22:58.829704000 +0000", updated_at: "2023-06-13 06:22:58.829704000 +0000">
+Did you mean?  committed!):
+    20: </ul>
+    21: 
+    22: <h2>Reviews</h2>
+    23: <% @books.comments.each do |book| %>
+    24:   <p>
+    25:     <strong>Commenter:</strong>
+    26:     <%= book.reviewer %>
+  
+app/views/books/show.html.erb:23
+Started GET "/books/1" for ::1 at 2023-06-14 08:01:43 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3716)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3787)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms | Allocations: 4509)
+
+
+  
+ActionView::Template::Error (undefined method `comments' for #<Book id: 1, title: "Grit", author: "Angela Duckworth", genre: "Business &  Economics", publish_date: "2016-05-03", cover_image: "https://m.media-amazon.com/images/P/1501111108.01....", isbn_number: "9781501111129, 1501111124", brief_description: "In this instant New York Times bestseller, Angela ...", detailed_description: "In this instant New York Times bestseller, Angela ...", rating: 4.5, created_at: "2023-06-13 06:22:58.829704000 +0000", updated_at: "2023-06-13 06:22:58.829704000 +0000">
+Did you mean?  committed!):
+    20: </ul>
+    21: 
+    22: <h2>Reviews</h2>
+    23: <% @books.comments.each do |book| %>
+    24:   <p>
+    25:     <strong>Commenter:</strong>
+    26:     <%= book.reviewer %>
+  
+app/views/books/show.html.erb:23
+Started GET "/books/1" for ::1 at 2023-06-14 08:01:45 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3716)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3787)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms | Allocations: 4509)
+
+
+  
+ActionView::Template::Error (undefined method `comments' for #<Book id: 1, title: "Grit", author: "Angela Duckworth", genre: "Business &  Economics", publish_date: "2016-05-03", cover_image: "https://m.media-amazon.com/images/P/1501111108.01....", isbn_number: "9781501111129, 1501111124", brief_description: "In this instant New York Times bestseller, Angela ...", detailed_description: "In this instant New York Times bestseller, Angela ...", rating: 4.5, created_at: "2023-06-13 06:22:58.829704000 +0000", updated_at: "2023-06-13 06:22:58.829704000 +0000">
+Did you mean?  committed!):
+    20: </ul>
+    21: 
+    22: <h2>Reviews</h2>
+    23: <% @books.comments.each do |book| %>
+    24:   <p>
+    25:     <strong>Commenter:</strong>
+    26:     <%= book.reviewer %>
+  
+app/views/books/show.html.erb:23
+Started GET "/books/1" for ::1 at 2023-06-14 08:01:51 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 19.5ms | Allocations: 8828)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 22628)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.2ms | Allocations: 24159)
+
+
+Started POST "/books/1/reviews" for ::1 at 2023-06-14 08:01:54 +0800
+Processing by ReviewsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"body"=>"tst"}, "commit"=>"Create Review", "book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 3678)
+
+
+  
+NoMethodError (undefined method `permit' for #<ReviewsController:0x00000000015c70>
+Did you mean?  print):
+  
+app/controllers/reviews_controller.rb:10:in `review_params'
+app/controllers/reviews_controller.rb:4:in `create'
+Started GET "/books/1" for ::1 at 2023-06-14 08:02:06 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 9.2ms | Allocations: 6747)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 20318)
+Completed 200 OK in 37ms (Views: 25.8ms | ActiveRecord: 1.2ms | Allocations: 27372)
+
+
+Started POST "/books/1/reviews" for ::1 at 2023-06-14 08:02:09 +0800
+Processing by ReviewsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"body"=>"test"}, "commit"=>"Create Review", "book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+[31mUnpermitted parameters: :authenticity_token, :review, :commit, :book_id. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x00007ff250e06fd8>, params: {"authenticity_token"=>"[FILTERED]", "review"=>{"body"=>"test"}, "commit"=>"Create Review", "controller"=>"reviews", "action"=>"create", "book_id"=>"1"} }[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms | Allocations: 5186)
+
+
+  
+NameError (Rails couldn't find a valid model for Reviewer association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.):
+  
+app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books/1" for ::1 at 2023-06-14 08:04:49 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 14.3ms | Allocations: 6421)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 20219)
+Completed 200 OK in 46ms (Views: 32.6ms | ActiveRecord: 1.6ms | Allocations: 27508)
+
+
+Started GET "/books/1" for ::1 at 2023-06-14 08:04:57 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1952)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4426)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.2ms | Allocations: 5947)
+
+
+Started POST "/books/1/reviews" for ::1 at 2023-06-14 08:05:11 +0800
+  
+SyntaxError (/home/kevin/localrepo/book-dice/app/controllers/reviews_controller.rb:10: syntax error, unexpected ':', expecting ')'
+...       params.permit(:reviwer :body)
+...                              ^
+):
+  
+app/controllers/reviews_controller.rb:10: syntax error, unexpected ':', expecting ')'
+app/controllers/reviews_controller.rb:10: syntax error, unexpected ':', expecting ')'
+app/controllers/reviews_controller.rb:10: syntax error, unexpected ':', expecting ')'
+Started GET "/books/1" for ::1 at 2023-06-14 08:05:28 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 5903)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 19473)
+Completed 200 OK in 40ms (Views: 28.7ms | ActiveRecord: 1.2ms | Allocations: 26467)
+
+
+Started POST "/books/1/reviews" for ::1 at 2023-06-14 08:05:32 +0800
+Processing by ReviewsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"reviewer"=>"test", "body"=>"test"}, "commit"=>"Create Review", "book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+[31mUnpermitted parameters: :authenticity_token, :review, :commit, :book_id. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x00007ff24486e140>, params: {"authenticity_token"=>"[FILTERED]", "review"=>{"reviewer"=>"test", "body"=>"test"}, "commit"=>"Create Review", "controller"=>"reviews", "action"=>"create", "book_id"=>"1"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mReview Create (1.3ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer_id", "body", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["reviewer_id", nil], ["body", nil], ["book_id", 1], ["created_at", "2023-06-14 00:05:32.588459"], ["updated_at", "2023-06-14 00:05:32.588459"]]
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.6ms | Allocations: 5209)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: main.reviewers):
+  
+app/controllers/reviews_controller.rb:4:in `create'
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20230613060305)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "genre" varchar, "publish_date" date, "cover_image" varchar, "isbn_number" varchar, "brief_description" text, "detailed_description" text, "rating" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230613060305"]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20230613234055)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "reviewer" varchar, "body" text, "book_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_924a0b30ca"
+FOREIGN KEY ("book_id")
+  REFERENCES "books" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_book_id" ON "reviews" ("book_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230613234055"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-06-14 00:07:51.501314"], ["updated_at", "2023-06-14 00:07:51.501314"]]
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books/1" for ::1 at 2023-06-14 08:08:04 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+Completed 404 Not Found in 12ms (ActiveRecord: 1.0ms | Allocations: 9159)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=1):
+  
+app/controllers/books_controller.rb:7:in `show'
+Started GET "/" for ::1 at 2023-06-14 08:08:07 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:4
+  Rendered books/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 771)
+  Rendered layout layouts/application.html.erb (Duration: 56.7ms | Allocations: 35261)
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.1ms | Allocations: 36439)
+
+
+Started GET "/" for ::1 at 2023-06-14 08:09:59 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:4
+  Rendered books/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 796)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3499)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.1ms | Allocations: 4593)
+
+
+Started GET "/books/new" for ::1 at 2023-06-14 08:10:01 +0800
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 7.8ms | Allocations: 5153)
+  Rendered books/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 5394)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 7579)
+Completed 200 OK in 32ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 27593)
+
+
+Started POST "/books" for ::1 at 2023-06-14 08:10:33 +0800
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Grit", "author"=>"test", "genre"=>"test", "publish_date"=>"2023-06-15", "cover_image"=>"google.com", "isbn_number"=>"123", "brief_description"=>"test", "detailed_description"=>"test", "rating"=>"3"}, "commit"=>"Create Book"}
+[31mUnpermitted parameters: :genre, :cover_image, :brief_description, :detailed_description, :rating. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f6a21334568>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Grit", "author"=>"test", "genre"=>"test", "publish_date"=>"2023-06-15", "cover_image"=>"google.com", "isbn_number"=>"123", "brief_description"=>"test", "detailed_description"=>"test", "rating"=>"3"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:17:in `create'
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publish_date", "cover_image", "isbn_number", "brief_description", "detailed_description", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Grit"], ["author", "test"], ["genre", nil], ["publish_date", "2023-06-15"], ["cover_image", nil], ["isbn_number", "123"], ["brief_description", nil], ["detailed_description", nil], ["rating", nil], ["created_at", "2023-06-14 00:10:33.412379"], ["updated_at", "2023-06-14 00:10:33.412379"]]
+  ↳ app/controllers/books_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:17:in `create'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 16ms (ActiveRecord: 8.6ms | Allocations: 4143)
+
+
+Started GET "/books/1" for ::1 at 2023-06-14 08:10:33 +0800
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 35.0ms | Allocations: 23846)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 26037)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 0.6ms | Allocations: 26917)
+
+
+Started GET "/books/new" for ::1 at 2023-06-14 08:10:39 +0800
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 5.8ms | Allocations: 2525)
+  Rendered books/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2581)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4765)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 5101)
+
+
+Started POST "/books" for ::1 at 2023-06-14 08:11:21 +0800
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Test Book", "author"=>"Test", "genre"=>"Test", "publish_date"=>"2023-06-08", "cover_image"=>"test.com", "isbn_number"=>"tes123", "brief_description"=>"This is a test entry", "detailed_description"=>"This is a test entry", "rating"=>"1"}, "commit"=>"Create Book"}
+[31mUnpermitted parameters: :genre, :cover_image, :brief_description, :detailed_description, :rating. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f6a2091cd78>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Test Book", "author"=>"Test", "genre"=>"Test", "publish_date"=>"2023-06-08", "cover_image"=>"test.com", "isbn_number"=>"tes123", "brief_description"=>"This is a test entry", "detailed_description"=>"This is a test entry", "rating"=>"1"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:17:in `create'
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publish_date", "cover_image", "isbn_number", "brief_description", "detailed_description", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Test Book"], ["author", "Test"], ["genre", nil], ["publish_date", "2023-06-08"], ["cover_image", nil], ["isbn_number", "tes123"], ["brief_description", nil], ["detailed_description", nil], ["rating", nil], ["created_at", "2023-06-14 00:11:21.175566"], ["updated_at", "2023-06-14 00:11:21.175566"]]
+  ↳ app/controllers/books_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:17:in `create'
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 14ms (ActiveRecord: 7.9ms | Allocations: 2453)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:11:21 +0800
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1281)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3458)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 4221)
+
+
+Started GET "/books/new" for ::1 at 2023-06-14 08:11:23 +0800
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 5.2ms | Allocations: 2519)
+  Rendered books/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2575)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 4759)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 5094)
+
+
+Started POST "/books" for ::1 at 2023-06-14 08:11:52 +0800
+Processing by BooksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"100 Books test", "author"=>"Angeli Khang", "genre"=>"Bold", "publish_date"=>"2023-06-13", "cover_image"=>"vivamax.com", "isbn_number"=>"12345566", "brief_description"=>"test", "detailed_description"=>"test", "rating"=>"1"}, "commit"=>"Create Book"}
+[31mUnpermitted parameters: :genre, :cover_image, :brief_description, :detailed_description, :rating. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007f6a30a62600>, params: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"100 Books test", "author"=>"Angeli Khang", "genre"=>"Bold", "publish_date"=>"2023-06-13", "cover_image"=>"vivamax.com", "isbn_number"=>"12345566", "brief_description"=>"test", "detailed_description"=>"test", "rating"=>"1"}, "commit"=>"Create Book", "controller"=>"books", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:17:in `create'
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publish_date", "cover_image", "isbn_number", "brief_description", "detailed_description", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "100 Books test"], ["author", "Angeli Khang"], ["genre", nil], ["publish_date", "2023-06-13"], ["cover_image", nil], ["isbn_number", "12345566"], ["brief_description", nil], ["detailed_description", nil], ["rating", nil], ["created_at", "2023-06-14 00:11:52.617343"], ["updated_at", "2023-06-14 00:11:52.617343"]]
+  ↳ app/controllers/books_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:17:in `create'
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 20ms (ActiveRecord: 8.7ms | Allocations: 2461)
+
+
+Started GET "/books/3" for ::1 at 2023-06-14 08:11:52 +0800
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3467)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 4226)
+
+
+Started GET "/books" for ::1 at 2023-06-14 08:11:58 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:4
+  Rendered books/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 692)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3103)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 3439)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:12:01 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1276)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3458)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 4212)
+
+
+Started POST "/books/2/reviews" for ::1 at 2023-06-14 08:12:07 +0800
+Processing by ReviewsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"reviewer"=>"test review", "body"=>"test"}, "commit"=>"Create Review", "book_id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+[31mUnpermitted parameters: :authenticity_token, :review, :commit, :book_id. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x00007f6a30da8af8>, params: {"authenticity_token"=>"[FILTERED]", "review"=>{"reviewer"=>"test review", "body"=>"test"}, "commit"=>"Create Review", "controller"=>"reviews", "action"=>"create", "book_id"=>"2"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "body", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["reviewer", nil], ["body", nil], ["book_id", 2], ["created_at", "2023-06-14 00:12:07.155745"], ["updated_at", "2023-06-14 00:12:07.155745"]]
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 17ms (ActiveRecord: 7.6ms | Allocations: 3179)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:12:07 +0800
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1279)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3455)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 4212)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:12:42 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 8.3ms | Allocations: 4399)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4471)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms | Allocations: 5957)
+
+
+  
+ActionView::Template::Error (undefined method `comments' for #<Book id: 2, title: "Test Book", author: "Test", genre: nil, publish_date: "2023-06-08", cover_image: nil, isbn_number: "tes123", brief_description: nil, detailed_description: nil, rating: nil, created_at: "2023-06-14 00:11:21.175566000 +0000", updated_at: "2023-06-14 00:11:21.175566000 +0000">
+Did you mean?  committed!):
+    20: </ul>
+    21: 
+    22: <h2>Reviews</h2>
+    23: <% @books.comments.each do |book| %>
+    24:   <p>
+    25:     <strong>Commenter:</strong>
+    26:     <%= book.reviewer %>
+  
+app/views/books/show.html.erb:23
+Started GET "/books/2" for ::1 at 2023-06-14 08:15:32 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered books/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3467)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5956)
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 0.5ms | Allocations: 7472)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:16:03 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered books/show.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2431)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 4905)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.3ms | Allocations: 6418)
+
+
+Started POST "/books/2/reviews" for ::1 at 2023-06-14 08:16:07 +0800
+Processing by ReviewsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"reviewer"=>"test", "body"=>"test"}, "commit"=>"Create Review", "book_id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+[31mUnpermitted parameters: :authenticity_token, :review, :commit, :book_id. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x00007f6a20c102c8>, params: {"authenticity_token"=>"[FILTERED]", "review"=>{"reviewer"=>"test", "body"=>"test"}, "commit"=>"Create Review", "controller"=>"reviews", "action"=>"create", "book_id"=>"2"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "body", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["reviewer", nil], ["body", nil], ["book_id", 2], ["created_at", "2023-06-14 00:16:07.249400"], ["updated_at", "2023-06-14 00:16:07.249400"]]
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 20ms (ActiveRecord: 8.5ms | Allocations: 2965)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:16:07 +0800
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered books/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1830)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4006)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 4811)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:16:44 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered books/show.html.erb within layouts/application (Duration: 15.1ms | Allocations: 7094)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 20649)
+Completed 200 OK in 41ms (Views: 28.6ms | ActiveRecord: 1.6ms | Allocations: 27686)
+
+
+Started POST "/books/2/reviews" for ::1 at 2023-06-14 08:16:48 +0800
+Processing by ReviewsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"reviewer"=>"test", "body"=>"test"}, "commit"=>"Create Review", "book_id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+[31mUnpermitted parameter: :reviewer. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x00007f6a21209788>, params: {"authenticity_token"=>"[FILTERED]", "review"=>{"reviewer"=>"test", "body"=>"test"}, "commit"=>"Create Review", "controller"=>"reviews", "action"=>"create", "book_id"=>"2"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mReview Create (0.8ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "body", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["reviewer", nil], ["body", "test"], ["book_id", 2], ["created_at", "2023-06-14 00:16:48.452190"], ["updated_at", "2023-06-14 00:16:48.452190"]]
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 17ms (ActiveRecord: 7.9ms | Allocations: 3161)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:16:48 +0800
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered books/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1850)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4026)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 4783)
+
+
+Started POST "/books/2/reviews" for ::1 at 2023-06-14 08:17:02 +0800
+Processing by ReviewsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"reviewer"=>"test", "body"=>"test"}, "commit"=>"Create Review", "book_id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "body", "book_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["reviewer", "test"], ["body", "test"], ["book_id", 2], ["created_at", "2023-06-14 00:17:02.645755"], ["updated_at", "2023-06-14 00:17:02.645755"]]
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:4:in `create'
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 28ms (ActiveRecord: 8.8ms | Allocations: 13056)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:17:02 +0800
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered books/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2844)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 16415)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.3ms | Allocations: 17595)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:18:58 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered books/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3267)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3339)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms | Allocations: 4828)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_review with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/kevin/localrepo/book-dice/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/turbo-rails-1.4.0/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.5/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.5/app/views"
+
+Did you mean?  books/reviews
+               books/form
+               active_storage/blobs/blob
+               action_text/attachables/remote_image
+               layouts/action_text/contents/content
+               action_text/attachment_galleries/attachment_gallery):
+    21: 
+    22: <h2>Reviews</h2>
+    23: <% @books.reviews.each do |book| %>
+    24:  <%= render @books.reviews %>
+    25: <% end %>
+    26: 
+    27: <h2>Add a review:</h2>
+  
+app/views/books/show.html.erb:24
+app/views/books/show.html.erb:23
+Started GET "/books/2" for ::1 at 2023-06-14 08:19:19 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered books/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3147)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3219)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms | Allocations: 4698)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_review with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/kevin/localrepo/book-dice/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/turbo-rails-1.4.0/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.5/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.5/app/views"
+
+Did you mean?  books/reviews
+               books/form
+               active_storage/blobs/blob
+               action_text/attachables/remote_image
+               layouts/action_text/contents/content
+               action_text/attachment_galleries/attachment_gallery):
+    20: </ul>
+    21: 
+    22: <h2>Reviews</h2>
+    23:  <%= render @books.reviews %>
+    24: 
+    25: <h2>Add a review:</h2>
+    26: <%= form_with model: [ @books, @books.reviews.build ] do |form| %>
+  
+app/views/books/show.html.erb:23
+Started GET "/books/2" for ::1 at 2023-06-14 08:19:31 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1983)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2055)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms | Allocations: 3534)
+
+
+  
+ActionView::Template::Error (undefined method `reviews' for nil:NilClass):
+    20: </ul>
+    21: 
+    22: <h2>Reviews</h2>
+    23:  <%= render @book.reviews %>
+    24: 
+    25: <h2>Add a review:</h2>
+    26: <%= form_with model: [ @books, @books.reviews.build ] do |form| %>
+  
+app/views/books/show.html.erb:23
+Started GET "/books/2" for ::1 at 2023-06-14 08:20:08 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered books/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3145)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3217)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 4696)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_review with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/kevin/localrepo/book-dice/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/turbo-rails-1.4.0/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.5/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.5/app/views"
+
+Did you mean?  books/reviews
+               books/form
+               active_storage/blobs/blob
+               action_text/attachables/remote_image
+               layouts/action_text/contents/content
+               action_text/attachment_galleries/attachment_gallery):
+    20: </ul>
+    21: 
+    22: <h2>Reviews</h2>
+    23:  <%= render @books.reviews %>
+    24: 
+    25: <h2>Add a review:</h2>
+    26: <%= form_with model: [ @books, @books.reviews.build ] do |form| %>
+  
+app/views/books/show.html.erb:23
+Started GET "/books/2" for ::1 at 2023-06-14 08:23:15 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered collection of reviews/_review.html.erb [4 times] (Duration: 2.7ms | Allocations: 287)
+  Rendered books/show.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2887)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 5375)
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 0.4ms | Allocations: 6887)
+
+
+Started GET "/books/2" for ::1 at 2023-06-14 08:24:13 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:23
+  Rendered collection of reviews/_review.html.erb [4 times] (Duration: 0.8ms | Allocations: 254)
+  Rendered reviews/_form.html.erb (Duration: 2.6ms | Allocations: 1352)
+  Rendered books/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3050)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 5523)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 7036)
+
+

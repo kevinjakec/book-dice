@@ -18,3 +18,9 @@
                     turbo_confirm: "Are you sure?"
                   } %></li>
 </ul>
+
+<h2>Reviews</h2>
+ <%= render @books.reviews %>
+
+<h2>Add a review:</h2>
+<%= render 'reviews/form' %>
