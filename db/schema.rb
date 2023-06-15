@@ -16,7 +16,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_030851) do
     t.string "author"
     t.integer "genre_id", null: false
     t.string "cover_image"
-    t.text "brief_description"
     t.float "rating"
     t.text "detailed_description"
     t.date "publish_date"

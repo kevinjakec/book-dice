@@ -15,7 +15,6 @@ class BooksTest < ApplicationSystemTestCase
     click_on "New book"
 
     fill_in "Author", with: @book.author
-    fill_in "Brief description", with: @book.brief_description
     fill_in "Cover image", with: @book.cover_image
     fill_in "Detailed description", with: @book.detailed_description
     fill_in "Genre", with: @book.genre_id
@@ -37,7 +36,6 @@ class BooksTest < ApplicationSystemTestCase
     click_on "Edit this book", match: :first
 
     fill_in "Author", with: @book.author
-    fill_in "Brief description", with: @book.brief_description
     fill_in "Cover image", with: @book.cover_image
     fill_in "Detailed description", with: @book.detailed_description
     fill_in "Genre", with: @book.genre_id
