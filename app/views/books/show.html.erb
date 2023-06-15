@@ -20,5 +20,5 @@
     </div>
     
     <%= render @book %>
-
+    <%= render partial: 'reviews/form', locals: { book: @book, review: Review.new } %>
 </div>
