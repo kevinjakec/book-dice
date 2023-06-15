@@ -6,14 +6,8 @@ class Book < ApplicationRecord
 
   attr_accessor :brief_description
 
-  before_save :extract_brief_description
-
   # has_one_attached :cover_image
 
   private
-
-  def extract_brief_description
-    self.brief_description = detailed_description.to_s.split("\n\n").first
-  end
 
 end
