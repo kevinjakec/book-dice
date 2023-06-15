@@ -9131,3 +9131,1294 @@ Processing by BooksController#show as HTML
 Completed 200 OK in 53ms (Views: 45.8ms | ActiveRecord: 1.1ms | Allocations: 25828)
 
 
+Started GET "/books" for ::1 at 2023-06-15 18:20:19 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_books.html.erb:11
+  Rendered collection of books/_books.html.erb [3 times] (Duration: 12.2ms | Allocations: 5757)
+  Rendered books/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 7155)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 7228)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.0ms | Allocations: 8355)
+
+
+  
+ActionView::Template::Error (undefined method `rating' for nil:NilClass):
+    17:     </div>
+    18:     <p class="text-gray-600 mb-2"><%= book.author %></p>
+    19:     <div class="flex items-center mb-2">
+    20:       <%= render partial: 'ratings', locals: { rating: @book.rating } %>
+    21:     </div>
+    22:   </div>
+    23: </div>
+  
+app/views/books/_books.html.erb:20
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2023-06-15 18:20:32 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_books.html.erb:11
+  Rendered collection of books/_books.html.erb [3 times] (Duration: 4.2ms | Allocations: 2849)
+  Rendered books/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4051)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4124)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms | Allocations: 5232)
+
+
+  
+ActionView::Template::Error (undefined method `ratings' for nil:NilClass):
+    17:     </div>
+    18:     <p class="text-gray-600 mb-2"><%= book.author %></p>
+    19:     <div class="flex items-center mb-2">
+    20:       <%= render partial: 'ratings', locals: { rating: @book.ratings } %>
+    21:     </div>
+    22:   </div>
+    23: </div>
+  
+app/views/books/_books.html.erb:20
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2023-06-15 18:20:44 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_books.html.erb:11
+  Rendered books/_ratings.html.erb (Duration: 0.6ms | Allocations: 324)
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 58)
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 58)
+  Rendered collection of books/_books.html.erb [3 times] (Duration: 7.5ms | Allocations: 2154)
+  Rendered books/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 3358)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 660)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 5276)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 6417)
+
+
+Started GET "/books" for ::1 at 2023-06-15 18:22:03 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_books.html.erb:11
+  Rendered books/_ratings.html.erb (Duration: 1.0ms | Allocations: 247)
+  Rendered books/_ratings.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered books/_ratings.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered collection of books/_books.html.erb [3 times] (Duration: 9.3ms | Allocations: 1968)
+  Rendered books/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 3169)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 660)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 5084)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.4ms | Allocations: 6216)
+
+
+Started GET "/books/2" for ::1 at 2023-06-15 18:22:13 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:23
+  Rendered books/_book.html.erb (Duration: 4.5ms | Allocations: 1103)
+  Rendered books/show.html.erb within layouts/application (Duration: 12.2ms | Allocations: 3334)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 4483)
+Completed 200 OK in 27ms (Views: 21.6ms | ActiveRecord: 0.9ms | Allocations: 5397)
+
+
+Started GET "/books/2/edit" for ::1 at 2023-06-15 18:22:25 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:63
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:67
+  Rendered books/_form.html.erb (Duration: 23.4ms | Allocations: 9284)
+  Rendered books/edit.html.erb within layouts/application (Duration: 25.4ms | Allocations: 9671)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 309)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 10806)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.4ms | Allocations: 11651)
+
+
+Started PATCH "/books/2" for ::1 at 2023-06-15 18:22:28 +0800
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"cover_image"=>"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ-hQp-geKRR9PGKRbf-QjY_HA6ha5ZnpQ8dVNbiSMqZi5Z6rue", "title"=>"The Fellowship of the Ring", "author"=>"J.R.R. Tolkien", "publisher"=>"Houghton Mifflin Harcourt", "publish_date"=>"2012-02-15", "isbn_number"=>"9780547952017, 0547952015", "detailed_description"=>"The first volume in J.R.R. Tolkien's epic adventure THE LORD OF THE RINGS   One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them\n\nIn ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit. In a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-eart...\nSource: Publisher", "rating"=>"3", "genre_id"=>"1", "submitted_by_id"=>"1"}, "commit"=>"Update Book", "id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mBook Update (4.2ms)[0m  [1m[33mUPDATE "books" SET "rating" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["rating", 3.0], ["updated_at", "2023-06-15 10:22:28.954057"], ["id", 2]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 27ms (ActiveRecord: 11.3ms | Allocations: 5897)
+
+
+Started GET "/books/2" for ::1 at 2023-06-15 18:22:28 +0800
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:23
+  Rendered books/_book.html.erb (Duration: 2.2ms | Allocations: 728)
+  Rendered books/show.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2536)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3685)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 4510)
+
+
+Started GET "/books" for ::1 at 2023-06-15 18:22:31 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_books.html.erb:11
+  Rendered books/_ratings.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered books/_ratings.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered books/_ratings.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered collection of books/_books.html.erb [3 times] (Duration: 3.7ms | Allocations: 1312)
+  Rendered books/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2202)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 3359)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 3689)
+
+
+Started GET "/books/4" for ::1 at 2023-06-15 18:23:03 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:23
+  Rendered books/_book.html.erb (Duration: 3.2ms | Allocations: 726)
+  Rendered books/show.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2449)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 3598)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.8ms | Allocations: 4374)
+
+
+Started GET "/books/4" for ::1 at 2023-06-15 18:24:52 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:23
+  Rendered books/_book.html.erb (Duration: 1.9ms | Allocations: 1088)
+  Rendered books/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3295)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 660)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5200)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.5ms | Allocations: 6800)
+
+
+Started GET "/books/4/edit" for ::1 at 2023-06-15 18:24:54 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 9.4ms | Allocations: 6154)
+  Rendered books/edit.html.erb within layouts/application (Duration: 10.9ms | Allocations: 6452)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 6523)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.1ms | Allocations: 7321)
+
+
+  
+ActionView::Template::Error (Missing partial books/_rating, application/_rating with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/kevin/localrepo/book-dice/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/devise-4.9.2/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/turbo-rails-1.4.0/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.5/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.5/app/views"
+
+Did you mean?  books/ratings
+               books/form
+               books/book
+               books/books
+               action_text/attachables/remote_image
+               action_text/attachment_galleries/attachment_gallery):
+    60: 
+    61:   <div class="my-5">
+    62:   <%= form.label :rating %>
+    63:   <%= render 'rating', rating: book.rating.to_f %>
+    64:   <%= form.select :rating, options_for_select([1, 2, 3, 4, 5], selected: book.rating), {}, class: "hidden" %>
+    65: </div>
+    66: 
+  
+app/views/books/_form.html.erb:63
+app/views/books/_form.html.erb:2
+app/views/books/edit.html.erb:4
+Started GET "/books/4/edit" for ::1 at 2023-06-15 18:25:15 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.9ms | Allocations: 243)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:69
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:73
+  Rendered books/_form.html.erb (Duration: 19.5ms | Allocations: 8186)
+  Rendered books/edit.html.erb within layouts/application (Duration: 21.5ms | Allocations: 8583)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 10467)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.4ms | Allocations: 12019)
+
+
+Started GET "/books/4/edit" for ::1 at 2023-06-15 18:28:41 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.9ms | Allocations: 240)
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:69
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:73
+  Rendered books/_form.html.erb (Duration: 12.7ms | Allocations: 5668)
+  Rendered books/edit.html.erb within layouts/application (Duration: 14.3ms | Allocations: 6065)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 7949)
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 0.4ms | Allocations: 9503)
+
+
+Started GET "/" for ::1 at 2023-06-15 18:28:44 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_books.html.erb:11
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered books/_ratings.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered collection of books/_books.html.erb [3 times] (Duration: 11.1ms | Allocations: 1724)
+  Rendered books/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 2909)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 4066)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.2ms | Allocations: 4475)
+
+
+Started GET "/" for ::1 at 2023-06-15 18:29:33 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_books.html.erb:11
+  Rendered books/_ratings.html.erb (Duration: 0.7ms | Allocations: 238)
+  Rendered books/_ratings.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered books/_ratings.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered collection of books/_books.html.erb [3 times] (Duration: 5.3ms | Allocations: 1999)
+  Rendered books/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3203)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 660)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 5118)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.2ms | Allocations: 6252)
+
+
+Started GET "/books/3" for ::1 at 2023-06-15 18:30:10 +0800
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:23
+  Rendered books/_book.html.erb (Duration: 2.5ms | Allocations: 1071)
+  Rendered books/show.html.erb within layouts/application (Duration: 11.3ms | Allocations: 3242)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 4391)
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 0.6ms | Allocations: 5244)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:30:12 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 29)
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:69
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:73
+  Rendered books/_form.html.erb (Duration: 15.2ms | Allocations: 5367)
+  Rendered books/edit.html.erb within layouts/application (Duration: 17.2ms | Allocations: 5749)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 309)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 6883)
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 0.6ms | Allocations: 7711)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:31:09 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.1ms | Allocations: 322)
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:69
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:73
+  Rendered books/_form.html.erb (Duration: 15.0ms | Allocations: 5749)
+  Rendered books/edit.html.erb within layouts/application (Duration: 16.5ms | Allocations: 6146)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 8030)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.5ms | Allocations: 9604)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:40:28 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.8ms | Allocations: 328)
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:69
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:73
+  Rendered books/_form.html.erb (Duration: 14.1ms | Allocations: 5817)
+  Rendered books/edit.html.erb within layouts/application (Duration: 15.2ms | Allocations: 6214)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 8098)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 1.3ms | Allocations: 9827)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:40:37 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.3ms | Allocations: 29)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:69
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:73
+  Rendered books/_form.html.erb (Duration: 10.9ms | Allocations: 4426)
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.6ms | Allocations: 4569)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 309)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 5703)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.2ms | Allocations: 6477)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:40:38 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 29)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:69
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:73
+  Rendered books/_form.html.erb (Duration: 10.3ms | Allocations: 4407)
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.3ms | Allocations: 4550)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 309)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 5684)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.7ms | Allocations: 6457)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:42:10 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.7ms | Allocations: 312)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:69
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:73
+  Rendered books/_form.html.erb (Duration: 12.3ms | Allocations: 5732)
+  Rendered books/edit.html.erb within layouts/application (Duration: 14.4ms | Allocations: 6129)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 8013)
+Completed 200 OK in 28ms (Views: 23.3ms | ActiveRecord: 0.4ms | Allocations: 9565)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:42:22 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.7ms | Allocations: 310)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:69
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:73
+  Rendered books/_form.html.erb (Duration: 9.1ms | Allocations: 5737)
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.1ms | Allocations: 6134)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 8018)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.3ms | Allocations: 9571)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:42:45 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.9ms | Allocations: 310)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 13.4ms | Allocations: 5585)
+  Rendered books/edit.html.erb within layouts/application (Duration: 15.2ms | Allocations: 5982)
+  Rendered layouts/_navbar.html.erb (Duration: 2.1ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 7867)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.4ms | Allocations: 9420)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:44:47 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 9.8ms | Allocations: 6107)
+  Rendered books/edit.html.erb within layouts/application (Duration: 10.8ms | Allocations: 6407)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 6479)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms | Allocations: 8000)
+
+
+  
+ActionView::Template::Error (Missing partial books/_rating, application/_rating with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/kevin/localrepo/book-dice/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/devise-4.9.2/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/turbo-rails-1.4.0/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.5/app/views"
+  * "/home/kevin/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.5/app/views"
+
+Did you mean?  books/ratings
+               books/form
+               books/book
+               books/books
+               action_text/attachables/remote_image
+               action_text/attachment_galleries/attachment_gallery):
+    60: 
+    61: <div class="my-5">
+    62:   <%= form.label :rating %>
+    63:   <%= render 'rating', rating: book.rating.to_f %>
+    64:   <%= form.hidden_field :rating, class: "rating-input" %>
+    65: </div>
+    66: 
+  
+app/views/books/_form.html.erb:63
+app/views/books/_form.html.erb:2
+app/views/books/edit.html.erb:4
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:44:56 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.3ms | Allocations: 384)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 12.1ms | Allocations: 5668)
+  Rendered books/edit.html.erb within layouts/application (Duration: 13.5ms | Allocations: 6065)
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 7950)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.7ms | Allocations: 9502)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:46:45 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.9ms | Allocations: 389)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 11.7ms | Allocations: 5673)
+  Rendered books/edit.html.erb within layouts/application (Duration: 13.2ms | Allocations: 6070)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 7955)
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.4ms | Allocations: 9508)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:47:30 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.6ms | Allocations: 384)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 10.4ms | Allocations: 5676)
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.8ms | Allocations: 6073)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 7958)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.4ms | Allocations: 9511)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:48:59 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.8ms | Allocations: 391)
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 12.9ms | Allocations: 5667)
+  Rendered books/edit.html.erb within layouts/application (Duration: 14.1ms | Allocations: 6064)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 7949)
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 0.8ms | Allocations: 9502)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:49:36 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.8ms | Allocations: 383)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 10.7ms | Allocations: 5661)
+  Rendered books/edit.html.erb within layouts/application (Duration: 12.7ms | Allocations: 6058)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 7943)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.3ms | Allocations: 9496)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:49:49 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.7ms | Allocations: 383)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 14.4ms | Allocations: 5673)
+  Rendered books/edit.html.erb within layouts/application (Duration: 16.1ms | Allocations: 6070)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 7955)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.4ms | Allocations: 9508)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:50:07 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.3ms | Allocations: 388)
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 11.9ms | Allocations: 5675)
+  Rendered books/edit.html.erb within layouts/application (Duration: 13.2ms | Allocations: 6072)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 7957)
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 0.4ms | Allocations: 9510)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:52:04 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.8ms | Allocations: 388)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 14.8ms | Allocations: 5674)
+  Rendered books/edit.html.erb within layouts/application (Duration: 16.8ms | Allocations: 6071)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 7956)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.4ms | Allocations: 9509)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:53:26 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.1ms | Allocations: 387)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 13.8ms | Allocations: 5681)
+  Rendered books/edit.html.erb within layouts/application (Duration: 15.4ms | Allocations: 6078)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 7963)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.3ms | Allocations: 9516)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:54:59 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.4ms | Allocations: 1637)
+  Rendered books/_form.html.erb (Duration: 5.4ms | Allocations: 4530)
+  Rendered books/edit.html.erb within layouts/application (Duration: 7.3ms | Allocations: 4829)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4901)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms | Allocations: 6427)
+
+
+  
+ActionView::Template::Error (comparison of Integer with :rating failed):
+    42: </script>
+    43: <div class="star-rating">
+    44:   <% (1..5).each do |i| %>
+    45:     <% selected = i <= rating ? "selected" : "" %>
+    46:     <span class="star <%= selected %> far fa-star" data-value="<%= i %>"></span>
+    47:   <% end %>
+    48: </div>
+  
+app/views/books/_ratings.html.erb:45:in `<='
+app/views/books/_ratings.html.erb:45
+app/views/books/_ratings.html.erb:44
+app/views/books/_form.html.erb:63
+app/views/books/_form.html.erb:2
+app/views/books/edit.html.erb:4
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:56:43 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 12.0ms | Allocations: 4648)
+  Rendered books/edit.html.erb within layouts/application (Duration: 14.4ms | Allocations: 4948)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 5020)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.1ms | Allocations: 6540)
+
+
+  
+ActionView::Template::Error (undefined method `rating' for #<ActionView::Helpers::FormBuilder:0x00007f9b40a682a8 @nested_child_index={}, @options={:allow_method_names_outside_object=>true, :skip_default_ids=>false, :class=>"contents"}, @template=#<ActionView::Base:0x00000000012278>, @object=#<Book id: 3, title: "The Lion, the Witch and the Wardrobe", author: "C. S. Lewis", genre_id: 1, cover_image: "https://i.harperapps.com/covers/9780064471046/x400...", rating: 4.0, detailed_description: "A mass-market paperback edition of The Lion, the W...", publish_date: nil, publisher: "", isbn_number: "9780064471046", reviews_id: nil, submitted_by_id: 1, created_at: "2023-06-15 06:55:02.341688000 +0000", updated_at: "2023-06-15 06:55:02.341688000 +0000">, @object_name="book", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>true}, @default_html_options={}, @multipart=nil, @index=nil>):
+    60: 
+    61: <div class="my-5">
+    62:   <%= form.label :rating %>
+    63:   <%= render 'ratings', locals: { rating: (form.rating || 0) } %>
+    64:   <%= form.hidden_field :rating, class: "rating-input" %>
+    65: </div>
+    66: 
+  
+app/views/books/_form.html.erb:63
+app/views/books/_form.html.erb:2
+app/views/books/edit.html.erb:4
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:56:56 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 4.5ms | Allocations: 4629)
+  Rendered books/edit.html.erb within layouts/application (Duration: 5.5ms | Allocations: 4929)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5001)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms | Allocations: 6521)
+
+
+  
+ActionView::Template::Error (undefined method `rating' for #<ActionView::Helpers::FormBuilder:0x00007f9b3c522860 @nested_child_index={}, @options={:allow_method_names_outside_object=>true, :skip_default_ids=>false, :class=>"contents"}, @template=#<ActionView::Base:0x000000000125e8>, @object=#<Book id: 3, title: "The Lion, the Witch and the Wardrobe", author: "C. S. Lewis", genre_id: 1, cover_image: "https://i.harperapps.com/covers/9780064471046/x400...", rating: 4.0, detailed_description: "A mass-market paperback edition of The Lion, the W...", publish_date: nil, publisher: "", isbn_number: "9780064471046", reviews_id: nil, submitted_by_id: 1, created_at: "2023-06-15 06:55:02.341688000 +0000", updated_at: "2023-06-15 06:55:02.341688000 +0000">, @object_name="book", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>true}, @default_html_options={}, @multipart=nil, @index=nil>):
+    60: 
+    61: <div class="my-5">
+    62:   <%= form.label :rating %>
+    63:   <%= render 'ratings', locals: { ratings: (form.rating || 0) } %>
+    64:   <%= form.hidden_field :rating, class: "rating-input" %>
+    65: </div>
+    66: 
+  
+app/views/books/_form.html.erb:63
+app/views/books/_form.html.erb:2
+app/views/books/edit.html.erb:4
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:57:06 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 7.8ms | Allocations: 5158)
+  Rendered books/_form.html.erb (Duration: 13.3ms | Allocations: 8053)
+  Rendered books/edit.html.erb within layouts/application (Duration: 14.4ms | Allocations: 8352)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 8424)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.1ms | Allocations: 9946)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `rating' for #<ActionView::Base:0x00000000012930>
+Did you mean?  Rational):
+    42: </script>
+    43: <div class="star-rating">
+    44:   <% (1..5).each do |i| %>
+    45:     <% selected = i <= rating ? "selected" : "" %>
+    46:     <span class="star <%= selected %> far fa-star" data-value="<%= i %>"></span>
+    47:   <% end %>
+    48: </div>
+  
+app/views/books/_ratings.html.erb:45
+app/views/books/_ratings.html.erb:44
+app/views/books/_form.html.erb:63
+app/views/books/_form.html.erb:2
+app/views/books/edit.html.erb:4
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:57:58 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 7.2ms | Allocations: 5133)
+  Rendered books/_form.html.erb (Duration: 10.9ms | Allocations: 8028)
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.8ms | Allocations: 8327)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 8399)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.1ms | Allocations: 9941)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `rating' for #<ActionView::Base:0x00000000012ca0>
+Did you mean?  Rational):
+    42: </script>
+    43: <div class="star-rating">
+    44:   <% (1..5).each do |i| %>
+    45:     <% selected = i <= rating ? "selected" : "" %>
+    46:     <span class="star <%= selected %> far fa-star" data-value="<%= i %>"></span>
+    47:   <% end %>
+    48: </div>
+  
+app/views/books/_ratings.html.erb:45
+app/views/books/_ratings.html.erb:44
+app/views/books/_form.html.erb:63
+app/views/books/_form.html.erb:2
+app/views/books/edit.html.erb:4
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:58:33 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.8ms | Allocations: 400)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:70
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:74
+  Rendered books/_form.html.erb (Duration: 11.3ms | Allocations: 5687)
+  Rendered books/edit.html.erb within layouts/application (Duration: 13.5ms | Allocations: 6084)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 7969)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.4ms | Allocations: 9543)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 18:59:17 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 11.5ms | Allocations: 5131)
+  Rendered books/_form.html.erb (Duration: 15.6ms | Allocations: 8028)
+  Rendered books/edit.html.erb within layouts/application (Duration: 16.5ms | Allocations: 8327)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 8399)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms | Allocations: 9920)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `rating' for #<ActionView::Base:0x00000000013218>
+Did you mean?  Rational):
+    41: </script>
+    42: <div class="star-rating">
+    43:   <% (1..5).each do |i| %>
+    44:     <% selected = i <= rating ? "selected" : "" %>
+    45:     <span class="star <%= selected %> far fa-star" data-value="<%= i %>"></span>
+    46:   <% end %>
+    47: </div>
+  
+app/views/books/_ratings.html.erb:44
+app/views/books/_ratings.html.erb:43
+app/views/books/_form.html.erb:63
+app/views/books/_form.html.erb:2
+app/views/books/edit.html.erb:4
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:00:28 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.9ms | Allocations: 381)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 14.0ms | Allocations: 5683)
+  Rendered books/edit.html.erb within layouts/application (Duration: 15.9ms | Allocations: 6080)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 7965)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.4ms | Allocations: 9517)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:01:19 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.9ms | Allocations: 385)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 13.0ms | Allocations: 5686)
+  Rendered books/edit.html.erb within layouts/application (Duration: 14.2ms | Allocations: 6083)
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 7968)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.3ms | Allocations: 9521)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:02:03 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.7ms | Allocations: 387)
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 14.2ms | Allocations: 5686)
+  Rendered books/edit.html.erb within layouts/application (Duration: 15.4ms | Allocations: 6083)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 7968)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.4ms | Allocations: 9521)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:02:05 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 29)
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 11.9ms | Allocations: 4286)
+  Rendered books/edit.html.erb within layouts/application (Duration: 12.6ms | Allocations: 4429)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 309)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 5563)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.5ms | Allocations: 6337)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:04:22 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.3ms | Allocations: 387)
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 14.2ms | Allocations: 5696)
+  Rendered books/edit.html.erb within layouts/application (Duration: 15.6ms | Allocations: 6093)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 7978)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.4ms | Allocations: 9530)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:08:02 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.2ms | Allocations: 383)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 14.3ms | Allocations: 5684)
+  Rendered books/edit.html.erb within layouts/application (Duration: 16.0ms | Allocations: 6081)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 7966)
+Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 0.4ms | Allocations: 9519)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:08:05 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 29)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 9.9ms | Allocations: 4278)
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.0ms | Allocations: 4421)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 309)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 5555)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.3ms | Allocations: 6329)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:08:27 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.8ms | Allocations: 383)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 13.5ms | Allocations: 5692)
+  Rendered books/edit.html.erb within layouts/application (Duration: 14.8ms | Allocations: 6089)
+  Rendered layouts/_navbar.html.erb (Duration: 2.7ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 7974)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.3ms | Allocations: 9526)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:10:24 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.0ms | Allocations: 387)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 15.4ms | Allocations: 5698)
+  Rendered books/edit.html.erb within layouts/application (Duration: 17.2ms | Allocations: 6095)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 7980)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.3ms | Allocations: 9533)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:10:40 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 29)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 9.6ms | Allocations: 4290)
+  Rendered books/edit.html.erb within layouts/application (Duration: 10.3ms | Allocations: 4433)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 309)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 5567)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.4ms | Allocations: 6341)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:10:52 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.1ms | Allocations: 390)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 13.9ms | Allocations: 5681)
+  Rendered books/edit.html.erb within layouts/application (Duration: 16.2ms | Allocations: 6078)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 7963)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.4ms | Allocations: 9515)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:11:06 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.7ms | Allocations: 387)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 15.6ms | Allocations: 5684)
+  Rendered books/edit.html.erb within layouts/application (Duration: 17.9ms | Allocations: 6081)
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 7966)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.4ms | Allocations: 9519)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:11:32 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 29)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 10.5ms | Allocations: 4282)
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.1ms | Allocations: 4425)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 309)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 5559)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.3ms | Allocations: 6333)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:14:22 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.9ms | Allocations: 396)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 12.0ms | Allocations: 5691)
+  Rendered books/edit.html.erb within layouts/application (Duration: 13.5ms | Allocations: 6088)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 7973)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.3ms | Allocations: 9547)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:14:39 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.0ms | Allocations: 393)
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 20.0ms | Allocations: 5696)
+  Rendered books/edit.html.erb within layouts/application (Duration: 22.9ms | Allocations: 6093)
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 7978)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 0.7ms | Allocations: 9531)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:15:14 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 1.1ms | Allocations: 396)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 20.2ms | Allocations: 5693)
+  Rendered books/edit.html.erb within layouts/application (Duration: 22.1ms | Allocations: 6090)
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 7978)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.4ms | Allocations: 9532)
+
+
+Started GET "/books/3/edit" for ::1 at 2023-06-15 19:16:28 +0800
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_ratings.html.erb (Duration: 0.7ms | Allocations: 393)
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/books/_form.html.erb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_form.html.erb:75
+  Rendered books/_form.html.erb (Duration: 11.7ms | Allocations: 5688)
+  Rendered books/edit.html.erb within layouts/application (Duration: 13.7ms | Allocations: 6086)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 7971)
+Completed 200 OK in 26ms (Views: 21.7ms | ActiveRecord: 0.4ms | Allocations: 9527)
+
+
+Started PATCH "/books/3" for ::1 at 2023-06-15 19:16:52 +0800
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"cover_image"=>"https://i.harperapps.com/covers/9780064471046/x400.jpg", "title"=>"The Lion, the Witch and the Wardrobe", "author"=>"C. S. Lewis", "publisher"=>"", "publish_date"=>"", "isbn_number"=>"9780064471046", "detailed_description"=>"A mass-market paperback edition of The Lion, the Witch and the Wardrobe, book two in the classic fantasy series The Chronicles of Narnia. This edition features cover art by Cliff Nielsen and interior black-and-white illustrations by the series' original illustrator, Pauline Baynes. \n\nFour adventurous siblings—Peter, Susan, Edmund, and Lucy Pevensie—step through a wardrobe door and into the land of Narnia, a land frozen in eternal winter and enslaved by the power of the White Witch. But when almost all hope is lost, the return of the Great Lion, Aslan, signals a great change . . . and a great sacrifice.\n\nThe Lion, the Witch and the Wardrobe is the second book in C. S. Lewis's classic fantasy series, which has been drawing readers of all ages into a magical land with unforgettable characters for over sixty years. This is a stand-alone read, but if you would like to explore more of the Narnian realm, pick up The Horse and His Boy, the third book in The Chronicles of Narnia.", "rating"=>"1", "genre_id"=>"1", "submitted_by_id"=>"1"}, "commit"=>"Update Book", "id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mBook Update (1.0ms)[0m  [1m[33mUPDATE "books" SET "rating" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["rating", 1.0], ["updated_at", "2023-06-15 11:16:52.124621"], ["id", 3]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 36ms (ActiveRecord: 17.3ms | Allocations: 4577)
+
+
+Started GET "/books/3" for ::1 at 2023-06-15 19:16:52 +0800
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:65:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_book.html.erb:23
+  Rendered books/_book.html.erb (Duration: 3.7ms | Allocations: 1076)
+  Rendered books/show.html.erb within layouts/application (Duration: 10.6ms | Allocations: 3332)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4481)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.5ms | Allocations: 5384)
+
+
+Started GET "/" for ::1 at 2023-06-15 19:16:54 +0800
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/_books.html.erb:11
+  Rendered books/_ratings.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered books/_ratings.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered books/_ratings.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered collection of books/_books.html.erb [3 times] (Duration: 6.4ms | Allocations: 1717)
+  Rendered books/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2958)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 4115)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.5ms | Allocations: 4522)
+
+

@@ -17,7 +17,7 @@
     </div>
     <p class="text-gray-600 mb-2"><%= book.author %></p>
     <div class="flex items-center mb-2">
-      <%# Render star rating component here %>
+      <%= render partial: 'ratings', locals: { rating: book.rating } %>
     </div>
   </div>
 </div>

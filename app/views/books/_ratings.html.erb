@@ -1,0 +1,51 @@
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const starContainer = document.querySelector('.star-rating');
+  const stars = starContainer.querySelectorAll('.star');
+  const ratingInput = document.querySelector('.rating-input');
+  let isClicked = false
+
+  stars.forEach(function(star) {
+    star.addEventListener('mouseover', function() {
+        if (!isClicked) handleStarHover(this);
+    });
+
+    star.addEventListener('mouseleave', function() {
+      if (!isClicked) resetStars();
+    });
+    
+    star.addEventListener('click', function() {
+      handleStarClick(this);
+    });
+  });
+
+
+  function handleStarHover(star) {
+    const hoveredValue = star.getAttribute('data-value');
+    for (let i = 0; i < hoveredValue; i++) {
+      stars[i].classList.remove('far');
+      stars[i].classList.add('fas');
+    }
+  }
+
+  function handleStarClick(star) {
+    const clickedValue = star.getAttribute('data-value');
+    ratingInput.value = clickedValue;
+    isClicked = !isClicked  
+    console.log(ratingInput.value)
+  }
+
+  function resetStars() {
+    stars.forEach(function(star) {
+      star.classList.remove('fas');
+      star.classList.add('far');
+    });
+  }
+});
+</script>
+<div class="star-rating">
+  <% (1..5).each do |i| %>
+    <% selected = i <= rating ? "fas" : "far" %>
+    <span class="star <%= selected %> fa-star" data-value="<%= i %>"></span>
+  <% end %>
+</div>
