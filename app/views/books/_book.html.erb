@@ -1,0 +1,67 @@
+<div id="<%= dom_id book %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= book.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Author:</strong>
+    <%= book.author %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Genre:</strong>
+    <%= book.genre_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Cover image:</strong>
+    <%= book.cover_image %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Brief description:</strong>
+    <%= book.brief_description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Rating:</strong>
+    <%= book.rating %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Detailed description:</strong>
+    <%= book.detailed_description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Publish date:</strong>
+    <%= book.publish_date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Publisher:</strong>
+    <%= book.publisher %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Isbn number:</strong>
+    <%= book.isbn_number %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Reviews:</strong>
+    <%= book.reviews_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Submitted by:</strong>
+    <%= book.submitted_by_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this book", book, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this book', edit_book_path(book), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

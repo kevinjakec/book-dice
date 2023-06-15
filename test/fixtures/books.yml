@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author: MyString
+  genre: one
+  cover_image: MyString
+  brief_description: MyText
+  rating: 1.5
+  detailed_description: MyText
+  publish_date: 2023-06-15
+  publisher: MyString
+  isbn_number: MyString
+  reviews: one
+  submitted_by: one
+
+two:
+  title: MyString
+  author: MyString
+  genre: two
+  cover_image: MyString
+  brief_description: MyText
+  rating: 1.5
+  detailed_description: MyText
+  publish_date: 2023-06-15
+  publisher: MyString
+  isbn_number: MyString
+  reviews: two
+  submitted_by: two
