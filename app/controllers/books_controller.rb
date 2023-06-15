@@ -22,6 +22,7 @@ class BooksController < ApplicationController
   # POST /books or /books.json
   def create
     @book = Book.new(book_params)
+    @review.submitted_by = current_user
     # @book.cover_image.attach(params[:book][:cover_image]) if params[:book][:cover_image]
 
     respond_to do |format|

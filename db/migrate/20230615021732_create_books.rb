@@ -12,7 +12,6 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.string :isbn_number
       t.references :reviews, null: true, foreign_key: { to_table: :reviews }
       t.references :submitted_by, null: false, foreign_key: { to_table: :users }
-
       t.timestamps
     end
   end

@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :comments
-  resources :reviews
-  resources :books
+  resources :books do
+    resources :reviews
+  end
   resources :genres
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

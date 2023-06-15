@@ -1,0 +1,10 @@
+<% if current_user %>
+    <div class="inline">
+    <%= form.submit button_text, class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+  <% else %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg my-3">
+      <h2 class="font-bold inline-block">Error:</h2>
+      <p class=" inline-block">Please login or register before you can add or edit a book.</p>
+    </div>
+<% end %>
