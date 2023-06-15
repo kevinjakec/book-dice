@@ -8,7 +8,7 @@
     <%= link_to 'New book', new_book_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="books" class="min-w-full">
-    <%= render @books %>
+  <div id="books" class="w-full grid grid-cols-4 gap-4">
+    <%= render partial: 'books', collection: @books, as: :book %>
   </div>
 </div>
