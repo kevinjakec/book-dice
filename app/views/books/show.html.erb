@@ -6,22 +6,22 @@
   </div>
 
     <div class="flex flex-col md:flex-row justify-between items-center gap-4 w-full">
-    <p class="text-sm leading-4 text-gray-400 dark:text-gray-300">Submitted by: <%= @book.submitted_by.email %></p>
-    <div class="flex justify-center gap-4">
-    <% if current_user && current_user.id == @book.submitted_by_id %>
-      <%= link_to 'Edit', edit_book_path(@book), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      <%= link_to 'Delete', book_path(@book), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium", data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
-      <% end %>
-      <%= link_to 'Back to books', books_path, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    </div>
+      <p class="text-sm leading-4 text-gray-400 dark:text-gray-300">Submitted by: <%= @book.submitted_by.email %></p>
+      <div class="flex justify-center gap-4">
+        <% if current_user && current_user.id == @book.submitted_by_id %>
+          <%= link_to 'Edit', edit_book_path(@book), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+          <%= link_to 'Delete', book_path(@book), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium", data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      } %>
+          <% end %>
+          <%= link_to 'Back to books', books_path, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      </div>
     </div>
     
     <%= render @book %>
     <div class="flex flex-col md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
-      <%= render partial: 'reviews/form', locals: { book: @book, review: Review.new } %>
+      <%= render partial: 'reviews/form', locals: { book: @book, review: Review.new, label: "Add review", btn_label: "Post" } %>
       <div class="flex justify-between items-center mt-4">
         <h1 class="font-bold text-4xl">Reviews</h1>
       </div>

@@ -36,13 +36,13 @@ class ReviewsController < ApplicationController
 
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
+    @book = Book.find(params[:book_id])
+
     respond_to do |format|
       if @review.update(review_params)
-        format.html { redirect_to review_url(@review), notice: "Review was successfully updated." }
-        format.json { render :show, status: :ok, location: @review }
+        format.html { redirect_to book_path(@book), notice: 'Review updated successfully.' }
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
+        format.html { render 'books/show' }
       end
     end
   end

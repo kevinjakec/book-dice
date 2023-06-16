@@ -9,9 +9,8 @@
     <div class="flex justify-between">
     <h3 class="text-lg font-bold mb-2"><%= book.title %></h3>
     <% if current_user && current_user.id == book.submitted_by_id %>
-        <%= link_to edit_book_path(book), class: "text-gray-500 hover:text-gray-900" do %>
-        <i class="fa-solid fa-pen-to-square"></i>
-
+        <%= link_to edit_book_path(book), method: :delete, class: "text-gray-500 hover:text-gray-900" do %>
+          <i class="fa-solid fa-pen-to-square"></i>
         <% end %>
     <% end %>
     </div>
