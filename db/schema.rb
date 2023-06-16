@@ -59,13 +59,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_054326) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "reviews_id", null: false
+    t.integer "review_id", null: false
     t.integer "commenter_id", null: false
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["commenter_id"], name: "index_comments_on_commenter_id"
-    t.index ["reviews_id"], name: "index_comments_on_reviews_id"
+    t.index ["review_id"], name: "index_comments_on_review_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -103,7 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_054326) do
   add_foreign_key "books", "genres"
   add_foreign_key "books", "reviews", column: "reviews_id"
   add_foreign_key "books", "users", column: "submitted_by_id"
-  add_foreign_key "comments", "reviews", column: "reviews_id"
+  add_foreign_key "comments", "reviews"
   add_foreign_key "comments", "users", column: "commenter_id"
   add_foreign_key "reviews", "books"
   add_foreign_key "reviews", "comments", column: "comments_id"
