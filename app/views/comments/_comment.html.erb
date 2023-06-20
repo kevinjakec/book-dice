@@ -1,17 +1,40 @@
-<div id="<%= dom_id comment %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Commenter:</strong>
-    <%= comment.commenter_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Body:</strong>
-    <%= comment.body %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this comment", comment, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this comment', edit_comment_path(comment), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+<hr class="m-4" />
+<div  id="<%= dom_id comment %>" class="ml-12 px-8">
+  <div class="flex justify-end">
+    <% if  current_user && current_user.email == comment.commenter.email %>
+      <%= link_to edit_book_review_comment_path(@book, review, comment), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium",
+      data: {
+        controller: "comments",
+        action: "comments#edittoggleForm",
+        comments_form_param: "edit-comment-#{comment.id}",
+        comments_body_param: "edit-comment-body-#{comment.id}",
+      } do %>
+        Edit <i class="fa-solid fa-pen-to-square"></i>
+      <% end %>
+      <%= link_to book_review_comment_path(@book, review, comment), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium", data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      } do %>
+        Delete <i class="fa-solid fa-trash"></i>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="edit-comment-<%= comment.id %>" class="hidden">
+     <%= render partial: 'comments/form', locals: { book: @book, review: review, comment: comment, label: "Edit comment", btn_label: "Update" } %>
+  </div>
+  <div id="edit-comment-body-<%= comment.id %>" class="max-w-lg px-8 rounded-md">
+    <div class="space-y-1">
+      <p class="text-xl font-medium leading-5 text-gray-900">
+        <%= comment.body %>
+      </p>
+    </div>
+    <div class="mt-6 flex items-center space-x-2">
+      <span class="text-sm font-semibold leading-5 text-gray-600"><%= comment.commenter.email %></span>
+    </div>
+    <% if (comment.updated_at - comment.created_at) > 1 %>
+      <span class="mt-2 text-sm font-medium leading-5 text-gray-500">Edited <%= time_ago_in_words(comment.updated_at) %> ago</span>
+    <% else %>
+      <span class="mt-2 text-sm font-medium leading-5 text-gray-500">Posted <%= time_ago_in_words(comment.created_at) %> ago</span>
+    <% end %>
+  </div>
 </div>
