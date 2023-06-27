@@ -1,27 +1,24 @@
 # README
 
-## How did I create the application?
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-1. Firstly if rails is not installed on my setup I ran this command:
+Things you may want to cover:
 
-```
-# To install:
-gem install rails
+* Ruby version
 
-# To verify:
-rails --version
-```
+* System dependencies
 
-2. Create the new application in any directory:
+* Configuration
 
-```
-rails new book-dice
-```
+* Database creation
 
-3. Then run rails server:
+* Database initialization
 
-```
-rails server
-# or the shortcut version
-rails s
-```
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
