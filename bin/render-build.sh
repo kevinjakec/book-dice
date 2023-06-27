@@ -4,4 +4,4 @@ set -o errexit
 
 bundle install
 bundle exec rake assets:precompile
-bundle exec rake db:drop db:migrate
+DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rake db:drop db:migrate
