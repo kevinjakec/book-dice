@@ -10,8 +10,8 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.date :publish_date
       t.string :publisher
       t.string :isbn_number
-      t.references :reviews, null: true, foreign_key: { to_table: :reviews, deferred: true }
-      t.references :submitted_by, null: false, foreign_key: { to_table: :users, deferred: true }
+      # t.references :reviews, null: true, foreign_key: { to_table: :reviews}
+      t.references :submitted_by, null: false, foreign_key: { to_table: :users}
       t.timestamps
     end
   end
