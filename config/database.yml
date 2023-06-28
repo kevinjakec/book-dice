@@ -21,7 +21,7 @@ production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  database: bookdice
+  database: bookdice_gy8q
   username: bookdice
   password: <%= ENV['DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
