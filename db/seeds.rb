@@ -11,7 +11,6 @@ Book.destroy_all
 User.destroy_all
 
 test_user = User.create(
-    name: 'Test',
     email: 'test@test.com',
     password: 'test@123'
 )
